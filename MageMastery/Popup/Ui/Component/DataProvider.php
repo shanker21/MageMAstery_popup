@@ -11,7 +11,6 @@ use Magento\Framework\View\Element\UiComponent\DataProvider\Reporting;
 class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
 {
     
-
     /**
      * @var AddFilterInterface[]
      */
@@ -72,5 +71,17 @@ class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvi
         } else {
             parent::addFilter($filter);
         }
+    }
+    public function searchResultToOutput(searchResultInterface $searchResult): array
+    {
+        $arrItems =[];
+
+        $arrItems['items'] =[];
+        foreach ($searchResult->getItem() as $item) {
+            $arrItems['items'][] = $item->getData();
+        }
+        $arrItems['totalRecords'] = $searchResult->getTotalCount();
+        return $arrItems;
+
     }
 }
