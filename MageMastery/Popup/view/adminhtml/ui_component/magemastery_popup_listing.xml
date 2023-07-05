@@ -104,7 +104,7 @@
                     <item name="saveUrl" xsi:type="url" path="popup/index/inlineEdit"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
-                <param name="indexField" xsi:type="string">page_id</param>
+                <param name="indexField" xsi:type="string">popup_id</param>
                 <param name="enabled" xsi:type="boolean">true</param>
                 <param name="selectProvider" xsi:type="string">magemastery_popup_listing.magemastery_popup_listing.magemastery_popup_columns.ids</param>
             </editorConfig>
@@ -129,7 +129,7 @@
         <column name="popup_id">
             <settings>
                 <filter>textRange</filter>
-                <label translate="true">Popup ID</label>
+                <label translate="true">ID</label>
                 <sorting>asc</sorting>
             </settings>
         </column>
@@ -147,7 +147,7 @@
         </column>
         <column name="is_active" component="Magento_Ui/js/grid/columns/select">
             <settings>
-                <options class="MageMastery\Popup\Model\Ui\Source\Listing\IsActive"/>
+                <!-- <options class="MageMastery\Popup\Model\Ui\Source\Listing\IsActive"/> -->
                 <filter>select</filter>
                 <editor>
                     <editorType>select</editorType>
@@ -156,26 +156,26 @@
                 <label translate="true">Status</label>
             </settings>
         </column>
-        <column name="creation_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
             <settings>
                 <filter>dateRange</filter>
                 <dataType>date</dataType>
                 <label translate="true">Created</label>
             </settings>
         </column>
-        <column name="update_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+        <column name="updated_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
             <settings>
                 <filter>dateRange</filter>
                 <dataType>date</dataType>
                 <label translate="true">Modified</label>
             </settings>
         </column>
-        <actionsColumn name="actions" class="MageMastery\Popup\Ui\Component\Listing\Column\PopupActions">
+        <!-- <actionsColumn name="actions" class="MageMastery\Popup\Ui\Component\Listing\Column\PopupActions">
             <settings>
                 <indexField>popup_id</indexField>
                 <resizeEnabled>false</resizeEnabled>
                 <resizeDefaultWidth>107</resizeDefaultWidth>
             </settings>
-        </actionsColumn>
+        </actionsColumn> -->
     </columns>
 </listing>
